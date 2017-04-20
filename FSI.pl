@@ -31,7 +31,7 @@ print "Output file:$opfn.txt \n";
 print "Output file:$opfn.txt \n";
 }
 
-open OUT, "> $opfn.txt";
+open OUT, "> $opfn.txt" or die ("[-] Error: Can't open or creat $opfn.txt\n");
 print OUT "#CHROM\tPOS\tREF\tALT\tADP\tWT\tHET\tHOM\tNC\tS1_SDP\tS1_DP\tS1_RD\tS1_AD\tS1_FREQ\tS1_PVAL\tS2_SDP\tS2_DP\tS2_RD\tS2_AD\tS2_FREQ\tS2_PVAL\tabsDeltaFREQ\n";
 
 #while(defined(our $row = <>)){
