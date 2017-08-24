@@ -2,7 +2,7 @@
 
 #AUTHORS
 # Kaining Hu (c) 2017
-# Filtetr SNP_Index (FSI)v1.0000 2017/04/20
+# Filter SNP_Index (FSI)v1.1000 2017/08/25
 # hukaining@gmail.com
 #
 use strict;
@@ -20,9 +20,16 @@ our $HET = "";
 our $HOM = "";
 our $NC = "";
 our $Ainfo;
+our $mindepth=20;
+our $filterpercent=0.3;
 
-GetOptions("o=s" => \$opfn,"verbose"=>\$verbose)
-	or die("Error in command line arguments\nUsage: perl FSI.pl [-o outfileprefix] <inputfile>\nNote: Compare with two samples and get abs delta SNP-Index. \n");
+GetOptions("o=s" => \$opfn,"d=i"=>\$mindepth,"f=f"=>\$filterpercent,"verbose"=>\$verbose)
+	or die("[-]Error in command line arguments\n    Filter SNP_Index (FSI)v1.1000 2017/08/25\nUsage: perl FSI.pl [options] <inputfile>\n
+  options:\n
+	 [-o outprefix default: filtered.out]\n
+	 [-d int|mindepth default: 20]\n
+	 [-f float|filterpercent [0-1.0] default: 0.3]\n
+  Note: Compare with two samples and get abs delta SNP-Index. \n");
 	#open IN,"chrA09.snp.vcf";
 if ($opfn eq ""){
 $opfn="filtered.out";
@@ -58,7 +65,7 @@ while(our $row = <>){
 		
 		if ($NC>0){next;}
 		if ($HOM==2){next;}
-		if ($ADP<20) {next;}
+		if ($ADP<$mindepth) {next;}
 		
 	}
 
@@ -71,8 +78,8 @@ while(our $row = <>){
 	my $S2index = $S2info[6];
 	$S1index =~ s/\%//;
 	$S2index =~ s/\%//;
-	if ($S1index/100<0.3 and $S2index/100<0.3) {next;}
-	
+	#if ($S1index/100<0.3 and $S2index/100<0.3) {next;}
+	if ($S1index/100<$filterpercent and $S2index/100<$filterpercent) {next;}
 	my $absdeltaindex=abs($S1index-$S2index)/100;
 	
 	
