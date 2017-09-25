@@ -2,7 +2,7 @@
 
 #AUTHORS
 # Kaining Hu (c) 2017
-# Window Slide Analysis Sount simple command (WSAcount)v2.1000 2017/09/25
+# Window Slide Analysis Count simple command (WSAcount)v2.1000 2017/09/25
 # hukaining@gmail.com
 #
 use strict;
