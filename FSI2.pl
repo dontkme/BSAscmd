@@ -109,13 +109,13 @@ LINE: while(our $row = <>){
       my $cs1index=$Sindex[$compares1];
       my $cs2index=$Sindex[$compares2];
       if ($cs1index<$filterpercent and $cs2index<$filterpercent) {next;}
-      my $absdeltaindex=abs($cs1index-$cs2index)/100;
+      my $absdeltaindex=abs($cs1index-$cs2index);
      
      print OUT "$Chr\t$Pos\t$Ref\t$Alt\t$ADP\t$WT\t$HET\t$HOM\t$NC";
      our $z=1;
      for ($z=1;$z<=$samplenum;$z++){
       #say $z;
-       print OUT "\t$info{$z}[0]\t$info{$z}[2]\t$info{$z}[3]\t$info{$z}[4]\t$info{$z}[5]\t$info{$z}[6]\t$info{$z}[7]";
+       print OUT "\t\"$info{$z}[0]\"\t$info{$z}[2]\t$info{$z}[3]\t$info{$z}[4]\t$info{$z}[5]\t$info{$z}[6]\t$info{$z}[7]";
        #print "$info{$z}[2,3,4,5,6,7]";
     
      }
