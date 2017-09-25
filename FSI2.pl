@@ -2,7 +2,7 @@
 
 #AUTHORS
 # Kaining Hu (c) 2017
-# Filter SNP_Index (FSI)v2.0000 2017/09/22
+# Filter SNP_Index (FSI)v2.0001 2017/09/25
 # hukaining@gmail.com
 #
 #use 5.0100;
