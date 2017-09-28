@@ -2,7 +2,7 @@
 
 #AUTHORS
 # Kaining Hu (c) 2017
-# Filter SNP_Index (FSI)v2.0001 2017/09/25
+# Filter SNP_Index (FSI)v2.0002 2017/09/28
 # hukaining@gmail.com
 #
 #use 5.0100;
@@ -30,11 +30,14 @@ our @Sindex="";
 our %info;
 
 GetOptions("o=s" => \$opfn,"d=i"=>\$mindepth,"f=f"=>\$filterpercent,"n=i"=>\$samplenum,"c1=i"=>\$compares1,"c2=i"=>\$compares2,"verbose"=>\$verbose)
-	or die("[-]Error in command line arguments\n    Filter SNP_Index (FSI)v2.0000 2017/09/22\nUsage: perl FSI.pl [options] <inputfile>\n
+	or die("[-]Error in command line arguments\n    Filter SNP_Index (FSI)v2.0002 2017/09/28\nUsage: perl FSI.pl [options] <inputfile>\n
   options:\n
 	 [-o outprefix default: filtered.out]\n
 	 [-d int|mindepth default: 20]\n
 	 [-f float|filterpercent [0-1.0] default: 0.3]\n
+	 [-n int|number of all samples default: 2]\n
+	 [-c1 int|The first sample used for comparing to the sencond sample to calculate abs delta SNP-Index default: 1]\n
+	 [-c2 int|The second sample used for comparing to the first sample to calculate abs delta SNP-Index default: 2]\n
   Note: Compare with two samples and get abs delta SNP-Index. \n");
 	#open IN,"chrA09.snp.vcf";
 if ($opfn eq ""){
