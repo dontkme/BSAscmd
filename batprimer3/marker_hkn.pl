@@ -16,7 +16,7 @@ my $ref = $para{"-x"} || die ("\nError: parameter -x (reference) doesn't exist !
 my $head = $para{"-m"} || die ("\nError: parameter -m (.misa infile name) doesn't exist !\n");
 
 run_cmd( "perl p3_in_hkn.pl $head.misa $ref" );
-run_cmd( "primer3_core <$head.p3in >$head.p3out" );
+run_cmd( "primer3_core -default_version=1 <$head.p3in >$head.p3out" );
 run_cmd( "perl p3_out_hkn.pl $head.p3out $head.misa" );
 
 
