@@ -17,11 +17,16 @@ Get filtered SNP/Indels simple but most important values and get the absolute va
  
  Options:
       
-    [-o outprefix default: filtered.out]
+         [-o outprefix default: filtered.out]
+	 
 	 [-d int|mindepth default: 20]
+	 
 	 [-f float|filterpercent [0-1.0] default: 0.3]
+	 
 	 [-n int|number of all samples default: 2]
+	 
 	 [-c1 int|The first sample used for comparing to the sencond sample to calculate abs delta SNP-Index default: 1]
+	 
 	 [-c2 int|The second sample used for comparing to the first sample to calculate abs delta SNP-Index default: 2]
 
 
