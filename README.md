@@ -16,12 +16,12 @@ Get filtered SNP/Indels simple but most important values and get the absolute va
  Output file could be used for next window slide analysis or draw plots of SNP-Index.
  
  Options:
-      
-         [-o outprefix default: filtered.out]
+ 
+     [-o outprefix default: filtered.out]
 	 
 	 [-d int|mindepth default: 20]
 	 
-	 [-f float|filterpercent [0-1.0] default: 0.3]
+	 [-f float|compared samples at least one SNP-index bigger than filterpercent [0-1.0] default: 0.3]
 	 
 	 [-n int|number of all samples default: 2]
 	 
